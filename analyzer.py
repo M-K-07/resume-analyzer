@@ -3,9 +3,11 @@ from langchain_core.messages import HumanMessage
 from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
 import pdfplumber
+import streamlit as st
 import json
 
 load_dotenv()
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY") or st.secrets.get("GOOGLE_API_KEY")
 
 
 def extract_text_from_pdf(pdf_path):
@@ -14,7 +16,8 @@ def extract_text_from_pdf(pdf_path):
 
 llm= ChatGoogleGenerativeAI(
     model="gemini-1.5-flash",
-    temperature=0.1,)
+    temperature=0.1,
+    google_api_key=GOOGLE_API_KEY)
 
 prompt= PromptTemplate.from_template(
     """
