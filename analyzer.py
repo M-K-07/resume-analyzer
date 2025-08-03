@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 import pdfplumber
 import streamlit as st
 import json
+import os
 
 load_dotenv()
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY") or st.secrets.get("GOOGLE_API_KEY")
