@@ -14,7 +14,7 @@ def extract_text_from_pdf(pdf_path):
 
 llm= ChatGoogleGenerativeAI(
     model="gemini-1.5-flash",
-    temperature=0.1)
+    temperature=0.1,)
 
 prompt= PromptTemplate.from_template(
     """

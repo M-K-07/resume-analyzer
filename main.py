@@ -1,5 +1,7 @@
 import streamlit as st
 from analyzer import analyze_resume
+
+st.secrets("GOOGLE_API_KEY")  
 st.title("Resume Analyzer 📝")
 st.write("This application analyzes the match between a candidate's resume and a job description.")
 
